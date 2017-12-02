@@ -152,6 +152,7 @@ if(typeof exports === 'object' && typeof module === 'object')
       module.exports.isDefinedError = isDefinedError;
       module.exports.isDefined = isDefined;
       module.exports.notImplemented = notImplemented;
+      module.exports.paramCannotBeUndefined = paramCannotBeUndefined;
 
 }
 
