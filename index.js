@@ -129,7 +129,6 @@ if(typeof exports === 'object' && typeof module === 'object')
       module.exports.selector = selector;
       module.exports.propSetDef = propSetDef;
       module.exports.getDocSize = getDocSize;
-      module.exports.mergeToURL = mergeToURL;
       module.exports.setDefault = setDefault;
       module.exports.isDefinedError = isDefinedError;
       module.exports.isDefined = isDefined;
