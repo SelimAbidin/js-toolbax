@@ -60,10 +60,30 @@ function getDocSize() {
       return {x:w, y:h};
 }
 
+// /**
+//  * URL param merging.
+//  * example 
+//  *  
+//  * @param {String} url 
+//  * @param {String} path 
+//  */
+// function mergeToURL(url, path) {
+//       var ar = url.split('/').concat(path.split('/'));
+//       console.log('ar', ar);
+// }
 
-function mergeToURL(url, path) {
-      var ar = url.split('/').concat(path.split('/'));
-      console.log('ar', ar);
+/**
+ * if value is undefined or null, second param will be defined
+ * @param {*} param 
+ * @param {*} defValue 
+ */
+function setDefault(param, defValue) {
+      
+      if(param === undefined || param === null) {
+          return defValue  
+      }
+
+      return param
 }
 
 
