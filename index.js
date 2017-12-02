@@ -110,11 +110,30 @@ function isDefinedError (param) {
 }
 
 /**
+ * param cannot be undefined or null
+ * @param {*} param 
+ */
+function paramCannotBeUndefined (param) {
+      if(param === undefined || param === null) {
+            paramCannotBeUndefinedError()
+      }
+}
+
+
+/**
  * throws error for undefined parameter or function
  */
 function definedError(){
       throw new Error("Parameter or function is not defined")
 }
+
+/**
+ * cannotBeNullOrUndefined
+ */
+function paramCannotBeUndefinedError(){
+      throw new Error("Param cannot be undefined or null")
+}
+
 
 /**
  * not implemented error
