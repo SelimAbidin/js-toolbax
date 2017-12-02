@@ -51,7 +51,7 @@ function propSetDef (props, propName, defValue) {
 
 
 /**
- * Document size
+ * Document window / size
  * @return {Object} {x, y} 
  */
 function getDocSize() {
@@ -61,10 +61,23 @@ function getDocSize() {
 }
 
 
-module.exports = {
-      setDef : setDef,
-      selector : selector, 
-      propSetDef : propSetDef,
-      getDocSize : getDocSize
+function mergeToURL(url, path) {
+      var ar = url.split('/').concat(path.split('/'));
+      console.log('ar', ar);
 }
+
+
+if(typeof exports === 'object' && typeof module === 'object')
+{     
+      module.exports.setDef = setDef;
+      module.exports.selector = selector;
+      module.exports.propSetDef = propSetDef;
+      module.exports.getDocSize = getDocSize;
+      module.exports.mergeToURL = mergeToURL;
+}
+
+
+
+
+
 //export {setDef, selector, propSetDef, getDocSize}
