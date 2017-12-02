@@ -75,7 +75,8 @@ function getDocSize() {
 /**
  * if value is undefined or null, second param will be defined
  * @param {*} param 
- * @param {*} defValue 
+ * @param {*} defValue
+ * @returns {*} returns param or default value
  */
 function setDefault(param, defValue) {
       
@@ -86,6 +87,41 @@ function setDefault(param, defValue) {
       return param
 }
 
+/**
+ * checks if param is defined or not
+ * @param {*} param 
+ * @returns {boolean} returns false if undefined or null
+ */
+function isDefined (param) {
+      if(param === undefined || param === null) {
+          return false  
+      }
+      return true
+}
+
+/**
+ * checks if param is defined or not and throw error if not defined
+ * @param {*} param 
+ */
+function isDefinedError (param) {
+      if(param === undefined || param === null) {
+            definedError() 
+      }
+}
+
+/**
+ * throws error for undefined parameter or function
+ */
+function definedError(){
+      throw new Error("Parameter or function is not defined")
+}
+
+/**
+ * not implemented error
+ */
+function notImplemented(){
+      throw new Error("Method is not implemented")
+}
 
 if(typeof exports === 'object' && typeof module === 'object')
 {     
@@ -94,6 +130,11 @@ if(typeof exports === 'object' && typeof module === 'object')
       module.exports.propSetDef = propSetDef;
       module.exports.getDocSize = getDocSize;
       module.exports.mergeToURL = mergeToURL;
+      module.exports.setDefault = setDefault;
+      module.exports.isDefinedError = isDefinedError;
+      module.exports.isDefined = isDefined;
+      module.exports.notImplemented = notImplemented;
+
 }
 
 
