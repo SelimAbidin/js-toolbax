@@ -134,13 +134,24 @@ function paramCannotBeUndefinedError(){
       throw new Error("Param cannot be undefined or null")
 }
 
-
 /**
  * not implemented error
  */
 function notImplemented(){
       throw new Error("Method is not implemented")
 }
+
+
+var TO_RAD = Math.PI / 180
+function toRad(param) {
+    return param * TO_RAD
+}
+
+var TO_DEG = 180 / Math.PI
+function toDeg(param) {
+      return param * TO_DEG
+}
+
 
 if(typeof exports === 'object' && typeof module === 'object')
 {     
@@ -153,6 +164,8 @@ if(typeof exports === 'object' && typeof module === 'object')
       module.exports.isDefined = isDefined;
       module.exports.notImplemented = notImplemented;
       module.exports.paramCannotBeUndefined = paramCannotBeUndefined;
+      module.exports.toRad = toRad;
+      module.exports.toDeg = toDeg;
 
 }
 
