@@ -153,6 +153,26 @@ function toDeg(param) {
 }
 
 
+function isObjectsValuesEqual(a, b) {
+      
+      let aValues = Object.entries(a)
+      let bValues = Object.entries(b)
+      
+      if(aValues.length !== bValues.length) return false
+
+      for (let i = 0; i < aValues.length; i++) {
+            const aElement = aValues[i];
+            const bElement = bValues[i];
+            
+            if(aElement[0] !== bElement[0] || aElement[1] !== bElement[1] ) {
+                  return false
+            }
+      }
+
+      return true
+}
+
+
 if(typeof exports === 'object' && typeof module === 'object')
 {     
       module.exports.setDef = setDef;
@@ -166,7 +186,7 @@ if(typeof exports === 'object' && typeof module === 'object')
       module.exports.paramCannotBeUndefined = paramCannotBeUndefined;
       module.exports.toRad = toRad;
       module.exports.toDeg = toDeg;
-
+      module.exports.isObjectsValuesEqual = isObjectsValuesEqual;
 }
 
 
